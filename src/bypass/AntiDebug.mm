@@ -1,6 +1,6 @@
 #import "AntiDebug.h"
 #include "../../fishhook/fishhook.h"
-#include <sys/ptrace.h>
+//#include <sys/ptrace.h>
 #include <sys/sysctl.h>
 
 // ─── Block PT_DENY_ATTACH ─────────────────────────────────────────────────────
