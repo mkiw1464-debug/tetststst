@@ -14,6 +14,10 @@ struct rebinding {
     void **replaced;
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 FISHHOOK_EXPORT int rebind_symbols(struct rebinding rebindings[],
                                    size_t rebindings_nel);
 
@@ -21,4 +25,7 @@ FISHHOOK_EXPORT int rebind_symbols_image(void *header,
                                          intptr_t slide,
                                          struct rebinding rebindings[],
                                          size_t rebindings_nel);
+
+#ifdef __cplusplus
+}
 #endif
