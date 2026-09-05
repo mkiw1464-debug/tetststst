@@ -7,7 +7,7 @@
 static int (*orig_ptrace)(int, pid_t, caddr_t, int) = nullptr;
 
 static int fake_ptrace(int req, pid_t pid, caddr_t addr, int data) {
-    if (req == PT_DENY_ATTACH) return 0;
+    if (req == 31) return 0;
     return orig_ptrace(req, pid, addr, data);
 }
 
