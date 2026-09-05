@@ -4,8 +4,8 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#if !defined(FISHHOOK_EXPORT)
-#define FISHHOOK_EXPORT extern
+#if defined(__cplusplus)
+extern "C" {
 #endif
 
 struct rebinding {
@@ -14,7 +14,11 @@ struct rebinding {
     void **replaced;
 };
 
-#ifdef __cplusplus
+#if defined(__cplusplus)
+}
+#endif
+
+#if defined(__cplusplus)
 extern "C" {
 #endif
 
@@ -26,6 +30,8 @@ FISHHOOK_EXPORT int rebind_symbols_image(void *header,
                                          struct rebinding rebindings[],
                                          size_t rebindings_nel);
 
-#ifdef __cplusplus
+#if defined(__cplusplus)
 }
 #endif
+
+#endif /* fishhook_h */
